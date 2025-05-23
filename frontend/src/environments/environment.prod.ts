@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://vps-e5ed5bb2.vps.ovh.net/api',
+  apiUrl: 'https://51.210.177.195/api',
 };
