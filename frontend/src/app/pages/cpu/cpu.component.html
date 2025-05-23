@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>CPUs</h1>
+  <button mat-raised-button color="primary" (click)="openDialog()">Add CPU</button>
+
+  <table mat-table [dataSource]="cpus" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Brand Column -->
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef>Brand</th>
+      <td mat-cell *matCellDef="let element">{{ element.brand }}</td>
+    </ng-container>
+
+    <!-- Cores Column -->
+    <ng-container matColumnDef="cores">
+      <th mat-header-cell *matHeaderCellDef>Cores</th>
+      <td mat-cell *matCellDef="let element">{{ element.cores }}</td>
+    </ng-container>
+
+    <!-- Threads Column -->
+    <ng-container matColumnDef="threads">
+      <th mat-header-cell *matHeaderCellDef>Threads</th>
+      <td mat-cell *matCellDef="let element">{{ element.threads }}</td>
+    </ng-container>
+
+    <!-- Clock Speed Column -->
+    <ng-container matColumnDef="clockSpeed">
+      <th mat-header-cell *matHeaderCellDef>Clock Speed (GHz)</th>
+      <td mat-cell *matCellDef="let element">{{ element.clockSpeed }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" (click)="openDialog(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCpu(element._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

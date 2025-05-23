@@ -1,0 +1,46 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nestjs-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+      - MONGODB_URI=mongodb://vps-e5ed5bb2.vps.ovh.net:27017/si-mi-base-de-datos
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: angular-frontend
+    ports:
+      - "80:80"
+    expose:
+      - 80
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge
