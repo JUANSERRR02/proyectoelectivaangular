@@ -8,7 +8,7 @@ services:
       - "8001:8001"
     environment:
       - PORT=8001
-      - MONGODB_URI=mongodb://vps-e5ed5bb2.vps.ovh.net:27017/si-mi-base-de-datos
+      - MONGODB_URI=mongodb://51.210.177.195:27017/si-mi-base-de-datos
     depends_on:
       - mongodb
     networks:
