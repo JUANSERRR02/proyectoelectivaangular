@@ -1,42 +1,42 @@
 <div class="container">
-  <h1>PSUs</h1>
-  <button mat-raised-button color="primary" (click)="openDialog()">Add PSU</button>
+  <h1>Juguetes</h1>
+  <button mat-raised-button color="primary" (click)="openDialog()">añadir juguete</button>
 
   <table mat-table [dataSource]="psus" class="mat-elevation-z8">
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>Marca de empresa</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
     <ng-container matColumnDef="wattage">
-      <th mat-header-cell *matHeaderCellDef>Wattage (W)</th>
+      <th mat-header-cell *matHeaderCellDef>Armable o completo</th>
       <td mat-cell *matCellDef="let element">{{ element.wattage }}</td>
     </ng-container>
 
     <ng-container matColumnDef="efficiencyRating">
-      <th mat-header-cell *matHeaderCellDef>Efficiency Rating</th>
+      <th mat-header-cell *matHeaderCellDef>Grande o pequeño</th>
       <td mat-cell *matCellDef="let element">{{ element.efficiencyRating }}</td>
     </ng-container>
 
     <ng-container matColumnDef="modular">
-      <th mat-header-cell *matHeaderCellDef>Modular</th>
+      <th mat-header-cell *matHeaderCellDef>Caja</th>
       <td mat-cell *matCellDef="let element">{{ element.modular ? 'Yes' : 'No' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef>Price ($)</th>
+      <th mat-header-cell *matHeaderCellDef>Precio ($)</th>
       <td mat-cell *matCellDef="let element">{{ element.price }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button color="accent" (click)="openDialog(element)">
-          <mat-icon>edit</mat-icon>
+          <mat-icon>editar</mat-icon>
         </button>
         <button mat-icon-button color="warn" (click)="deletePsu(element._id)">
-          <mat-icon>delete</mat-icon>
+          <mat-icon>Eliminar</mat-icon>
         </button>
       </td>
     </ng-container>
