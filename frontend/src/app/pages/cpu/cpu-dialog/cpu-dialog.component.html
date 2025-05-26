@@ -6,7 +6,7 @@
       <mat-label>nombre</mat-label>
       <input matInput formControlName="name" required />
       <mat-error *ngIf="cpuForm.get('name')?.hasError('required')">
-        Name is required.
+        Nombre requiredo.
       </mat-error>
     </mat-form-field>
 
@@ -14,7 +14,7 @@
       <mat-label>peso</mat-label>
       <input matInput formControlName="brand" required />
       <mat-error *ngIf="cpuForm.get('brand')?.hasError('required')">
-        Brand is required.
+        peso requiredo.
       </mat-error>
     </mat-form-field>
 
@@ -22,7 +22,7 @@
       <mat-label>tamaño</mat-label>
       <input matInput type="number" formControlName="cores" required />
       <mat-error *ngIf="cpuForm.get('cores')?.hasError('required')">
-        Cores are required.
+        tamaño requerido.
       </mat-error>
       <mat-error *ngIf="cpuForm.get('cores')?.hasError('min')">
         Cores must be at least 1.
@@ -33,7 +33,7 @@
       <mat-label>longitud</mat-label>
       <input matInput type="number" formControlName="threads" required />
       <mat-error *ngIf="cpuForm.get('threads')?.hasError('required')">
-        Threads are required.
+        longitud requerido
       </mat-error>
       <mat-error *ngIf="cpuForm.get('threads')?.hasError('min')">
         Threads must be at least 1.
@@ -44,7 +44,7 @@
       <mat-label>ancho</mat-label>
       <input matInput type="number" step="0.1" formControlName="clockSpeed" required />
       <mat-error *ngIf="cpuForm.get('clockSpeed')?.hasError('required')">
-        Clock Speed is required.
+        ancho necesario
       </mat-error>
       <mat-error *ngIf="cpuForm.get('clockSpeed')?.hasError('min')">
         Clock Speed must be at least 0.1 GHz.
